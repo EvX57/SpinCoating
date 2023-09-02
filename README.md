@@ -1,1 +1,8 @@
 # SpinCoating
+
+This repository contains the code supplement for *PAPER TITLE*.
+
+"Data" contains all the raw experimental data and processed data.
+"preprocess.py" can be used to process the raw experimental data for visualization or 3D manifold training.
+"visualize.py" can be used to visualize the data.
+"model.py" contains the machine learning model to predict critical concentration from thickness and molecular weight. "model_train()" trains the model, "model_evaluate()" evalautes the model's performance on the test datapoints we collected, and "model_predict()" predicts the critical concentration for new thickness and molecular weight values.
