@@ -4,7 +4,7 @@
 
 `Data` contains all the raw experimental data and processed data.
 
-`preprocess.py` can be used to process the raw experimental data for visualization or 3D manifold training.
+`preprocess.py` can be used to process the raw experimental data for visualization or training of the machine learning model.
 
 `visualize.py` can be used to visualize the data.
 
