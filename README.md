@@ -2,7 +2,7 @@
 
 ## This repository contains the code supplement for *PAPER TITLE*.
 
-`**Data**` contains all the raw experimental data and processed data.
+`Data` contains all the raw experimental data and processed data.
 
 `preprocess.py` can be used to process the raw experimental data for visualization or 3D manifold training.
 
