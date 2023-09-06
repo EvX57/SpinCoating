@@ -1,6 +1,6 @@
 # SpinCoating
 
-## This repository contains the code supplement for *PAPER TITLE*.
+## This repository contains the code supplement for *Utilizing Machine Learning to Model Interdependency of Bulk Molecular Weight, Solute Concentration, and Thickness of Spin Coated Polystyrene Thin Films*.
 
 `Data` contains all the raw experimental data and processed data.
 
