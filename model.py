@@ -172,9 +172,7 @@ def model_train(df, eq, viz_model=False, save_path=''):
         ax.invert_xaxis()
         ax.set_ylabel('Molecular Weight (amu)')
         ax.set_zlabel('Concentration (mg/mL)')
-        #ax.set_zlabel('Critical Concentration (mg/mL)')
-        plt.show()
-        #plt.savefig(save_path)
+        plt.savefig(save_path)
         plt.close()
 
     return params
@@ -195,7 +193,7 @@ def model_evaluate(df_train, equation, df_test):
     #save_df['Actual'] = y_true
     save_df['Predictions'] = y_pred
     save_df['Percent Error'] = percent_error(y_true, y_pred)
-    save_df.to_csv('Data/poly_output.csv')
+    save_df.to_csv('Data/test_evaluation.csv', index=False)
     
     print('RMSE: ' + str(preprocess.rmse(y_true, y_pred)))
     print('RMSPE: ' + str(preprocess.rmspe(y_true, y_pred)))
@@ -207,10 +205,10 @@ def model_predict(df_train, equation, df_pred, viz_model=False, save_path=''):
     params = model_train(df_train, equation, viz_model, save_path)
 
     # Used for df_test
-    # inputs = create_test_datapoints(df_pred, include_PD=False, save=False)
+    inputs = create_test_datapoints(df_pred, include_PD=False, save=False)
 
     # Used for df_poly
-    inputs = create_datapoints_from_raw(df_pred, ['1015K'], [1015000])
+    # inputs = create_datapoints_from_raw(df_pred, ['1015K'], [1015000])
 
     outputs = [equation(input, params) for input in inputs]
 
@@ -222,7 +220,7 @@ if __name__ == '__main__':
     df_poly = pd.read_csv('Data/polydispersity_test.csv')
     df_raw = pd.read_csv('Data/averaged.csv')
 
-    #model_train(df_raw, equation_0, viz_model=True, save_path='Manifold/3D_manifold_V7.png')
-    #model_evaluate(df_raw, equation_0, df_test)
-    outputs = model_predict(df_raw, equation_0, df_poly)
-    print(outputs)
+    # model_train(df_raw, equation_0, viz_model=True, save_path='3D_manifold.png')
+    model_evaluate(df_raw, equation_0, df_test)
+    # outputs = model_predict(df_raw, equation_0, df_test)
+    # print(outputs)
